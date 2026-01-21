@@ -106,7 +106,7 @@ Dataset BISINDO Publik digunakan sebagai data tambahan lalu ditambahkan ke folde
 **Template link Kaggle**  
 ```
 
-(https://www.kaggle.com/datasets/achmadnoer/alfabet-bisindo)
+[Dataset BISINDO Kaggle](https://www.kaggle.com/datasets/achmadnoer/alfabet-bisindo)
 
 ```
 
