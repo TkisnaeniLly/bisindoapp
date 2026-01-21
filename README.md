@@ -1,6 +1,6 @@
 # BISINDO Translator
 
-**Pengenalan Bahasa Isyarat Indonesia (BISINDO) Menggunakan CNN dan LSTM Berbasis Web**
+**Pengenalan Huruf Bahasa Isyarat Indonesia (BISINDO) Menggunakan CNN dan LSTM Berbasis Web**
 
 ## Deskripsi Proyek
 
