@@ -1,10 +1,10 @@
-# 📌 BISINDO Translator
+# BISINDO Translator
 
 **Pengenalan Bahasa Isyarat Indonesia (BISINDO) Menggunakan CNN dan LSTM Berbasis Web**
 
-## 📖 Deskripsi Proyek
+## Deskripsi Proyek
 
-Proyek ini bertujuan untuk membangun sistem penerjemah **Bahasa Isyarat Indonesia (BISINDO)** menggunakan pendekatan **Deep Learning** dengan dua model utama yang berjalan **secara terpisah**:
+Proyek ini bertujuan untuk membangun sistem penerjemah **Bahasa Isyarat Indonesia (BISINDO)** menggunakan pendekatan **Deep Learning** dengan dua model utama yang berjalan *secara terpisah*:
 
 * **CNN (MobileNet)** untuk klasifikasi citra BISINDO (berbasis gambar)
 * **LSTM** untuk pengenalan urutan gerakan (sequence-based, real-time)
@@ -16,7 +16,7 @@ Sistem ini dilengkapi dengan **aplikasi web berbasis Flask** yang memungkinkan p
 
 ---
 
-## 🧠 Arsitektur Model
+## Arsitektur Model
 
 * **CNN (MobileNet)**
   Digunakan untuk klasifikasi citra hasil ekstraksi frame dari video BISINDO.
@@ -25,9 +25,76 @@ Sistem ini dilengkapi dengan **aplikasi web berbasis Flask** yang memungkinkan p
 
 ---
 
-## 📂 Struktur Proyek (Ringkas)
+## Struktur Proyek (Lengkap)
 
 ```
+├── CNN
+│   ├── Video_BISINDO
+│   ├── Citra_BISINDO
+│   ├── dataset_raw
+│   ├── dataset_balanced
+│   ├── BISINDO_split_aug
+│   ├── BISINDO_FINAL
+│   ├── sanity_check
+│   ├── test_images
+│   ├── model_bisindo_mobilenet.h5
+│   ├── classification_report_final.txt
+│   ├── confusion_matrix_final.png
+│   ├── training_history.json
+│   ├── step_1_ekstrak_frame.py
+│   ├── step_2_balance_dataset.py
+│   ├── step_3_split_dataset.py
+│   ├── step_4_offlineaug_hist_equalization.py
+│   ├── step_5_visual_sanity_check.py
+│   ├── step_6_final_split_dataset.py
+│   ├── step_7_final_checksplit.py
+│   ├── step_8_data_generator_zscore.py
+│   ├── step_9_model_mobilenet.py
+│   ├── step_10_final_train_mobilenet.py
+│   ├── step_11_final_confusion_matrix.py
+│   ├── step_12_final_classification_report.py
+│   ├── step_13_history.py
+│   ├── step_14_akurasi_loss.py
+│   └── step_15_test_single_image.py
+│
+├── LSTM
+│   ├── landmark_sequence_dataset2
+│   ├── evaluation_plots
+│   │   ├── confusion_matrix_all_classes.png
+│   │   ├── confusion_matrix_huruf_mirip.png
+│   │   ├── accuracy_curve.png
+│   │   └── loss_curve.png
+│   ├── model_bisindo_landmark_lstm.h5
+│   ├── class_index_lstm.json
+│   ├── history_lstm2.json
+│   ├── step_1_record_sequence.py
+│   ├── step_2_train_lstm.py
+│   ├── step_3_evaluation.py
+│   ├── step_4_accuracy_loss.py
+│   └── step_5_realtime_bisindo.py
+│
+├── Web_app
+│   ├── UJI_Upload
+│   ├── models
+│   │   ├── cnn_mobilenet.h5
+│   │   ├── lstm_predict.h5
+│   │   ├── class_indices.json
+│   │   └── class_index_lstm.json
+│   ├── static
+│   │   └── style.css
+│   ├── templates
+│   │   ├── index.html
+│   │   ├── translate_realtime.html
+│   │   ├── translate_upload.html
+│   │   └── tutorial.html
+│   ├── uploads
+│   ├── utils
+│   │   ├── cnn_preprocess.py
+│   │   └── lstm_predict.py
+│   ├── app.py
+│   └── requirements.txt
+```
+
 ├── BISINDO_FINAL
 ├── BISINDO_split_aug
 ├── Citra_BISINDO
@@ -56,46 +123,49 @@ Sistem ini dilengkapi dengan **aplikasi web berbasis Flask** yang memungkinkan p
 ├── step_14_akurasi_loss.py
 ├── step_15_test_single_image.py
 └── Web_app
+
 ```
 
 ---
 
-## 🧩 Dataset
+##  Dataset
 
 ### 1. Dataset Publik (Kaggle)
-
 Dataset BISINDO publik digunakan sebagai data tambahan.
 
-📌 **Template link Kaggle**
-
+**Template link Kaggle**  
 ```
-https://www.kaggle.com/datasets/USERNAME/NAMA-DATASET
+
+[https://www.kaggle.com/datasets/achmadnoer/alfabet-bisindo)
+
 ```
 
 ---
 
 ### 2. Dataset Pribadi
+- Data dikumpulkan melalui **perekaman video BISINDO**
+- Disimpan pada folder:
+```
 
-* Data dikumpulkan melalui **perekaman video BISINDO**
-* Disimpan pada folder:
+Video_BISINDO/
 
-  ```
-  Video_BISINDO/
-  ```
-* Video diekstrak menjadi frame menggunakan:
+```
+- Video diekstrak menjadi frame menggunakan:
+```
 
-  ```
-  step_1_ekstrak_frame.py
-  ```
-* Output:
+step_1_ekstrak_frame.py
 
-  ```
-  Citra_BISINDO/
-  ```
+```
+- Output:
+```
+
+Citra_BISINDO/
+
+```
 
 ---
 
-## 🔄 Pipeline CNN (MobileNet)
+## Pipeline CNN (MobileNet)
 
 1. Ekstraksi Frame (`step_1_ekstrak_frame.py`)
 2. Balancing Dataset (`step_2_balance_dataset.py`)
@@ -115,7 +185,7 @@ https://www.kaggle.com/datasets/USERNAME/NAMA-DATASET
 
 ---
 
-## 🔁 Pipeline LSTM
+## Pipeline LSTM
 
 1. Record Sequence (`step_1_record_sequence.py`)
 2. Training LSTM (`step_2_train_lstm.py`)
@@ -125,11 +195,11 @@ https://www.kaggle.com/datasets/USERNAME/NAMA-DATASET
 
 ---
 
-## 🌐 Aplikasi Web (Flask)
+## Aplikasi Web (Flask)
 
 ### Struktur Web App
-
 ```
+
 Web_app/
 ├── UJI_Upload
 ├── models
@@ -150,34 +220,33 @@ Web_app/
 │   └── lstm_predict.py
 ├── app.py
 └── requirements.txt
-```
+
+````
 
 ### Penjelasan Singkat
-
-* **UJI_Upload**: gambar uji coba manual
-* **models/**: model CNN & LSTM yang digunakan website
-* **utils/**: preprocessing dan prediksi ML
-* **uploads/**: penyimpanan input user
-* **app.py**: Flask API
+- **UJI_Upload**: gambar uji coba manual
+- **models/**: model CNN & LSTM yang digunakan website
+- **utils/**: preprocessing dan prediksi ML
+- **uploads/**: penyimpanan input user
+- **app.py**: Flask API
 
 ---
 
-## ▶️ Menjalankan Aplikasi Web
-
+## Menjalankan Aplikasi Web
 ```bash
 pip install -r requirements.txt
 python app.py
-```
+````
 
 Akses melalui browser:
 
 ```
-http://localhost:5000
+http://127.0.0.1:5000/
 ```
 
 ---
 
-## 📊 Output Akhir
+## Output Akhir
 
 * Model CNN & LSTM
 * Confusion Matrix
@@ -187,6 +256,6 @@ http://localhost:5000
 
 ---
 
-## ✍️ Catatan
+## Catatan
 
-Proyek ini dikembangkan untuk keperluan **penelitian / tugas akhir / pengembangan sistem BISINDO** dan masih dapat dikembangkan lebih lanjut.
+Proyek ini dikembangkan untuk keperluan **UAS PENGOLAHAN CITRA DIGITAL** dan masih dapat dikembangkan lebih lanjut.
