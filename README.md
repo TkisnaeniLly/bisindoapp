@@ -104,11 +104,8 @@ Sistem ini dilengkapi dengan *aplikasi web berbasis Flask* yang memungkinkan pen
 Dataset BISINDO Publik digunakan sebagai data tambahan lalu ditambahkan ke folder Citra_BISINDO/ bersama Dataset Pribadi.
 
 **Template link Kaggle**  
-```
 
 [Dataset BISINDO Kaggle](https://www.kaggle.com/datasets/achmadnoer/alfabet-bisindo)
-
-```
 
 ---
 
