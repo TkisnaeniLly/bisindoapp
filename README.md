@@ -9,10 +9,10 @@ Proyek ini bertujuan untuk membangun sistem penerjemah **Bahasa Isyarat Indonesi
 * **CNN (MobileNet)** untuk klasifikasi citra BISINDO (berbasis gambar)
 * **LSTM** untuk pengenalan urutan gerakan (sequence-based, real-time)
 
-Sistem ini dilengkapi dengan **aplikasi web berbasis Flask** yang memungkinkan pengguna:
+Sistem ini dilengkapi dengan *aplikasi web berbasis Flask* yang memungkinkan pengguna:
 
-* Menerjemahkan BISINDO secara **real-time**
-* Menerjemahkan BISINDO dari **gambar yang diunggah**
+* Menerjemahkan BISINDO secara *real-time*
+* Menerjemahkan BISINDO dari *gambar yang diunggah*
 
 ---
 
@@ -93,36 +93,6 @@ Sistem ini dilengkapi dengan **aplikasi web berbasis Flask** yang memungkinkan p
 │   │   └── lstm_predict.py
 │   ├── app.py
 │   └── requirements.txt
-```
-
-├── BISINDO_FINAL
-├── BISINDO_split_aug
-├── Citra_BISINDO
-├── Video_BISINDO
-├── dataset_balanced
-├── dataset_raw
-├── sanity_check
-├── test_images
-├── model_bisindo_mobilenet.h5
-├── classification_report_final.txt
-├── confusion_matrix_final.png
-├── training_history.json
-├── step_1_ekstrak_frame.py
-├── step_2_balance_dataset.py
-├── step_3_split_dataset.py
-├── step_4_offlineaug_hist_equalization.py
-├── step_5_visual_sanity_check.py
-├── step_6_final_split_dataset.py
-├── step_7_final_checksplit.py
-├── step_8_data_generator_zscore.py
-├── step_9_model_mobilenet.py
-├── step_10_final_train_mobilenet.py
-├── step_11_final_confusion_matrix.py
-├── step_12_final_classification_report.py
-├── step_13_history.py
-├── step_14_akurasi_loss.py
-├── step_15_test_single_image.py
-└── Web_app
 
 ```
 
